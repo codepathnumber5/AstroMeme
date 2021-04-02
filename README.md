@@ -106,38 +106,22 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
-   |       |  |  |
-   |         | |  |
-   |          |      |  |
-   |        |    |  |
-   |  |   | |
+   |userName| String| Name of user of application|
+   | userId| Number| *may be dont need it*|
+   | friendNaem  | String|Name of friend in the list|
+   |  friendBDay|Date| Date of the friend in the list|
+   |  sign|String| Astrological Sign of the friend from the friend list|
+   |  memeId| Number|meme that is being processed|
    |     |    |  |
    |     |  |  |
-   |      |  |  |
 ### Networking
 #### List of network requests by screen
-   - Home Feed Screen
-      - (Read/GET) Query all posts where user is author
-         ```swift
-         let query = PFQuery(className:"Post")
-         query.whereKey("author", equalTo: currentUser)
-         query.order(byDescending: "createdAt")
-         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let error = error { 
-               print(error.localizedDescription)
-            } else if let posts = posts {
-               print("Successfully retrieved \(posts.count) posts.")
-           // TODO: Do something with posts...
-            }
-         }
-         ```
-      - (Create/POST) Create a new like on a post
-      - (Delete) Delete existing like
-      - (Create/POST) Create a new comment on a post
+   - General list so far (may be broken down)
+      - (Read/GET) Get an astrological sign based on date entered 
+      - (Create/POST) Create new friend field with astrological sign attached to him/her
+      - (Delete) Delete existing friend 
+      - (Create/POST) Create a new meme based on friends sign 
       - (Delete) Delete existing comment
-   - Create Post Screen
-      - (Create/POST) Create a new post object
-   - Profile Screen
       - (Read/GET) Query logged in user object
-      - (Update/PUT) Update user profile image
+      - (Update/PUT) Update/Edit friends sign information
 
