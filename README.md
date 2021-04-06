@@ -107,8 +107,8 @@ Imaging a situation where you meet a vary interesting person online. In these vi
    | Property      | Type     | Description |
    | ------------- | -------- | ------------|
    |userName| String| Name of user of application|
-   | userId| Number| *may be dont need it*|
-   | friendNaem  | String|Name of friend in the list|
+   | userId| Number| Unique identifier for user |
+   | friendName  | String |Name of friend in the list|
    |  friendBDay|Date| Date of the friend in the list|
    |  sign|String| Astrological Sign of the friend from the friend list|
    |  memeId| Number|meme that is being processed|
