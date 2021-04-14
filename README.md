@@ -6,6 +6,7 @@ An application focused on astrology and memes based off of them!
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
 
+
 ## Overview
 ### Description
 Imaging a situation where you meet a vary interesting person online. In these virtual pandemic settings all you can do is to pretty much talk or text. The conversation topics and jokes are running dry. But no worries if you only know the horoscope sign of you conversation companion, with our app you will be able to quickly and continuously generate memes based on the horoscope sign of a person, which you can then text or share. 
@@ -86,9 +87,21 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 <img src='wireframe.jpeg' title='Wireframe' width='600' alt='Wireframe picture' />
 
 
-### [BONUS] Digital Wireframes & Mockups
+## API Documentation
+API used to create this project are the following:
+#### Zodiac Sign API 
+https://rapidapi.com/hajderr/api/zodiac-sign
+*GET* Astrological zodiac sign for a birthday
+- Headers:
+- date STRING
 
-### [BONUS] Interactive Prototype
+#### Meme Generator API
+https://rapidapi.com/meme-generator-api-meme-generator-api-default/api/meme-generator
+*GET* generateMeme
+- Headers:
+- meme STRING
+- top STRING
+- bottom STRING
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -98,4 +111,39 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+
+## Schema 
+### Models
+#### Post
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   |userName| String| Name of user of application|
+   | userId| Number| Unique identifier for user |
+   | friendName  | String |Name of friend in the list|
+   |  friendBDay|Date| Date of the friend in the list|
+   |  sign|String| Astrological Sign of the friend from the friend list|
+   |  memeId| Number|meme that is being processed|
+   |     |    |  |
+   |     |  |  |
+### Networking
+#### List of network requests by screen
+   - General list so far (may be broken down)
+      - (Read/GET) Get an astrological sign based on date entered 
+      - (Create/POST) Create new friend field with astrological sign attached to him/her
+      - (Delete) Delete existing friend 
+      - (Create/POST) Create a new meme based on friends sign 
+      - (Delete) Delete existing comment
+      - (Read/GET) Query logged in user object
+      - (Update/PUT) Update/Edit friends sign information
+
+### Build Sprint 1
+- [x] Sign In XML 
+- [x] Sign Up XML
+- [x] Designed and created art for the app
+- [x] Set up initial tables in Parse database
+- [x] Added API Documentation
+
+<img src='login.png' title='LogIn screen' width='200' alt='LogIn screen' /> <img src='signup.png' title='Sign Up screen' width='200' alt='Sign Up screen' />
 

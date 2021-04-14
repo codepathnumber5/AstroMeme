@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="0dp"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:background="#5e17eb"
+    tools:ignore="ExtraText">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:background="@color/white"
+        android:id="@+id/userId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="10dp"
+        android:layout_below="@id/logo"
+        android:hint="User Name"
+        android:inputType="text" />
+
+    <EditText
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pswd"
+        android:inputType="textPassword"
+        android:layout_margin="10dp"
+        android:layout_below="@id/userId"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight = "true"
+        android:hint="Password"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stars"
+
+        android:src="@drawable/stars"
+        android:layout_below="@id/pswd" />
+
+    <Button
+        style="@style/customButton"
+        android:id="@+id/logInBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/pswd"
+        android:layout_margin="40dp"
+        android:layout_centerHorizontal="true"
+        app:backgroundTint="@null"
+        android:text="Login" />
+
+    <Button
+        style="@style/customButton"
+        android:id="@+id/initSignUpBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stars"
+        android:layout_centerHorizontal="true"
+        app:backgroundTint="@null"
+        android:text="Sign Up" />
+
+</RelativeLayout>
