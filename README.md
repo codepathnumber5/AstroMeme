@@ -5,6 +5,7 @@ An application focused on astrology and memes based off of them!
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
+3. [API usage] (#API-Documentation)
 
 ## Overview
 ### Description
@@ -85,10 +86,25 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 ## Wireframes
 <img src='wireframe.jpeg' title='Wireframe' width='600' alt='Wireframe picture' />
 
+## API Documentation
+API used to create this project are the following:
+#### Zodiac Sign API 
+https://rapidapi.com/hajderr/api/zodiac-sign
+*GET* Astrological zodiac sign for a birthday
+Headers:
+date
+STRING
 
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
+#### Meme Generator API
+https://rapidapi.com/meme-generator-api-meme-generator-api-default/api/meme-generator
+*GET* generateMeme
+Headers:
+meme
+STRING
+top
+STRING
+bottom
+STRING
 
 ## Schema 
 [This section will be completed in Unit 9]
