@@ -131,6 +131,5 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 - [x] Designed and created art for the app
 - [x] Set up initial tables in Parse database 
 
-<img src='login.png' title='LogIn screen' width='400' alt='LogIn screen' />
-<img src='signup.png' title='Sign Up screen' width='400' alt='Sign Up screen' />
+<img src='login.png' title='LogIn screen' width='200' alt='LogIn screen' /> <img src='signup.png' title='Sign Up screen' width='200' alt='Sign Up screen' />
 
