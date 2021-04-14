@@ -126,8 +126,8 @@ Imaging a situation where you meet a vary interesting person online. In these vi
       - (Update/PUT) Update/Edit friends sign information
 
 ### Build Sprint 1
-#[checkbox:checked] Sign In XML 
-#[checkbox:checked] Sign Up XML
-#[checkbox:checked] Designed and created art for the app
-#[checkbox:checked] Set up initial tables in Parse database 
+[x] Sign In XML 
+[x] Sign Up XML
+[x] Designed and created art for the app
+[x] Set up initial tables in Parse database 
 
