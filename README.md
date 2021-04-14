@@ -99,7 +99,7 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
 
-## Editing HERE 2nd milestone
+
 ## Schema 
 ### Models
 #### Post
@@ -124,4 +124,10 @@ Imaging a situation where you meet a vary interesting person online. In these vi
       - (Delete) Delete existing comment
       - (Read/GET) Query logged in user object
       - (Update/PUT) Update/Edit friends sign information
+
+### Build Sprint 1
+#[checkbox:checked] Sign In XML 
+#[checkbox:checked] Sign Up XML
+#[checkbox:checked] Designed and created art for the app
+#[checkbox:checked] Set up initial tables in Parse database 
 
