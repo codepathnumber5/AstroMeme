@@ -16,6 +16,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <meta-data
+            android:name="net.dean.jraw.android.REDDIT_USERNAME"
+            android:value="${USERNAME}" />
+        <meta-data
+            android:name="net.dean.jraw.android.CLIENT_ID"
+            android:value="${CONSUMER_KEY}" />
+        <meta-data
+            android:name="net.dean.jraw.android.REDIRECT_URL"
+            android:value="${REDIRECT}" />
     </application>
 
 </manifest>
