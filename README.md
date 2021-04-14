@@ -5,7 +5,7 @@ An application focused on astrology and memes based off of them!
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
-3. [API usage] (#api)
+
 
 ## Overview
 ### Description
@@ -86,26 +86,22 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 ## Wireframes
 <img src='wireframe.jpeg' title='Wireframe' width='600' alt='Wireframe picture' />
 
-<a name="api"></a>
+
 ## API Documentation
 API used to create this project are the following:
 #### Zodiac Sign API 
 https://rapidapi.com/hajderr/api/zodiac-sign
 *GET* Astrological zodiac sign for a birthday
-Headers:
-date
-STRING
+- Headers:
+- date STRING
 
 #### Meme Generator API
 https://rapidapi.com/meme-generator-api-meme-generator-api-default/api/meme-generator
 *GET* generateMeme
-Headers:
-meme
-STRING
-top
-STRING
-bottom
-STRING
+- Headers:
+- meme STRING
+- top STRING
+- bottom STRING
 
 ## Schema 
 [This section will be completed in Unit 9]
@@ -146,7 +142,8 @@ STRING
 - [x] Sign In XML 
 - [x] Sign Up XML
 - [x] Designed and created art for the app
-- [x] Set up initial tables in Parse database 
+- [x] Set up initial tables in Parse database
+- [x] Added API Documentation
 
 <img src='login.png' title='LogIn screen' width='200' alt='LogIn screen' /> <img src='signup.png' title='Sign Up screen' width='200' alt='Sign Up screen' />
 
