@@ -5,7 +5,7 @@ An application focused on astrology and memes based off of them!
 1. [Product Spec](#Product-Spec)
 1. [Wireframes](#Wireframes)
 2. [Schema](#Schema)
-3. [API usage] (#API-Documentation)
+3. [API usage] (#api)
 
 ## Overview
 ### Description
@@ -86,6 +86,7 @@ Imaging a situation where you meet a vary interesting person online. In these vi
 ## Wireframes
 <img src='wireframe.jpeg' title='Wireframe' width='600' alt='Wireframe picture' />
 
+<a name="api"></a>
 ## API Documentation
 API used to create this project are the following:
 #### Zodiac Sign API 
