@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginRight="40dp"
+    android:layout_marginLeft="40dp"
+    android:layout_marginTop="70dp"
+    android:layout_marginBottom="150dp">
+
+    <TextView
+        android:id="@+id/head_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/andika"
+        android:gravity="center"
+        android:text="New Friend"
+        android:textSize="18dp" />
+
+    <TextView
+        android:id="@+id/new_friend_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="25dp"
+        android:layout_below="@+id/head_title"
+        android:fontFamily="@font/andika"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/new_name_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter frined's name"
+        android:layout_below="@+id/new_friend_name"
+        android:layout_margin="10dp" />
+
+
+    <LinearLayout
+        android:id="@+id/date_pick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/new_name_field">
+
+        <TextView
+            android:id="@+id/month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_weight="0.5"
+            android:layout_marginLeft="10dp"
+            android:text="Month" />
+
+        <TextView
+            android:id="@+id/day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:layout_weight="0.5"
+            android:layout_marginRight="10dp"
+            android:text="Day" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/numsber_picker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/date_pick"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/picker_month"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+
+        <EditText
+            android:id="@+id/picker_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+    </LinearLayout>
+
+<!-- Side be side buttons will go here -->
+
+    <LinearLayout
+        android:id="@+id/new_friend_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/cancel_new_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="1dp"
+            android:layout_weight="0.5"
+            android:text="Cancel"
+            tools:text="Cancel"/>
+
+        <Button
+            android:id="@+id/get_new_sign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="Get Sign"
+            tools:text="Get Sign"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

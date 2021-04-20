@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AstroMeme</string>
+    <string name="zodiac_sign">zodiac sign</string>
 </resources>
