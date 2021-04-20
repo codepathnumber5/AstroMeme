@@ -30,12 +30,12 @@
         android:layout_alignParentRight = "true"
         android:inputType="text" />
 
-    <EditText
+    <TextView
         android:background="@color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/dateBirth"
-        android:hint="Date of birth"
+        android:hint="Select Date of Birth"
         android:layout_margin="10dp"
         android:layout_below="@id/userId"
         android:layout_alignParentLeft = "true"
