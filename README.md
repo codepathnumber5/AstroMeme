@@ -147,3 +147,18 @@ https://rapidapi.com/meme-generator-api-meme-generator-api-default/api/meme-gene
 
 <img src='login.png' title='LogIn screen' width='200' alt='LogIn screen' /> <img src='signup.png' title='Sign Up screen' width='200' alt='Sign Up screen' />
 
+### Build Sprint 2
+- [x] Connected Parse database, can get info to login and write a new user into the table 
+- [x] Friend list XML - recycler view and friend item 
+- [x] Get zodiac sign XML
+- [x] Create new friend entry XML
+- [x] Get meme XML
+
+
+Completed user stories:  
+
+- [x] User can log into their account
+- [x] User can create a new account 
+
+<img src="dev_part2.gif" width="300" title='login walkthrough'/>
+
