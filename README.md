@@ -176,5 +176,5 @@ Completed user stories:
 - [x] User can user put a text on image 
 - [x] User sending meme through text
 
-<img src="astromeme-pickImage" width="200" title='login walkthrough'/> <img src="astromeme-putText" width="200" title='login walkthrough'/> <img src="astromeme-sendMeme" width="200" title='login walkthrough'/>
+<img src="astromeme-pickImage.gif" width="200" title='meme walkthrough'/> <img src="astromeme-putText.gif" width="200" title='meme walkthrough'/> <img src="astromeme-sendMeme.gif" width="200" title='meme walkthrough'/>
 
