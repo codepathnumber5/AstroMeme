@@ -162,3 +162,19 @@ Completed user stories:
 
 <img src="dev_part2.gif" width="300" title='login walkthrough'/>
 
+### Build Sprint 
+- [x] Connected Meme database 
+- [x] New Friend Class finished
+- [x] Enhanced Get Meme XML
+- [x] Created MainActivity class with recycler view and Adapter
+- [x] Configured resources for zodiac sign description
+
+
+Completed user stories:  
+
+- [x] User can can choose an image
+- [x] User can user put a text on image 
+- [x] User sending meme through text
+
+<img src="astromeme-pickImage.gif" width="200" title='meme walkthrough'/> <img src="astromeme-putText.gif" width="200" title='meme walkthrough'/> <img src="astromeme-sendMeme.gif" width="200" title='meme walkthrough'/>
+

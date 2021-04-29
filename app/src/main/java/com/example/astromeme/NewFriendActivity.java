@@ -3,6 +3,7 @@ package com.example.astromeme;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +12,9 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.parse.ParseException;
+import com.parse.SaveCallback;
 
 public class NewFriendActivity extends AppCompatActivity {
     public static final String TAG = "NEWFRIENDACTIVITY";
@@ -50,11 +54,33 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendMonth = pickerMonth.getText().toString();
                 String friendDay = pickerDay.getText().toString();
 
-
+                // Can be adjusted later, when decided on date format we will use
+                String friendDate = friendDay+"/"+friendMonth;
+                String friendZodiac = "generic";
                 if (friendName.isEmpty()) {
-                    //Toast.makeText(this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(NewFriendActivity.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                //TODO go to friend_sign activity
+                saveFriend(friendName, friendDate, friendZodiac);
+            }
+        });
+    }
+
+    private void saveFriend(String name, String date, String zodiac){
+        Friend friend = new Friend();
+        friend.setKeyName(name);
+        friend.setKeyDate(date);
+        friend.setKeyZodiac(zodiac);
+        friend.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if(e!=null){
+                    Log.e(TAG, "Error while saving friend ", e);
+                    Toast.makeText(NewFriendActivity.this, "Error saving friend ", Toast.LENGTH_SHORT).show();
+                }
+                Log.i(TAG, "Friend was saved! ");
+                // TODO move to the friend_sign activity with the name and the sign for this friend
+                goFriendSign();
             }
         });
     }
@@ -62,7 +88,12 @@ public class NewFriendActivity extends AppCompatActivity {
     private void goMainActivity(){
         Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
+
     }
 
+    private void goFriendSign(){
+        Intent i = new Intent(NewFriendActivity.this, FriendSign.class);
+        startActivity(i);
+    }
 
 }

@@ -1,6 +1,8 @@
 package com.example.astromeme;
 
 import com.parse.Parse;
+import com.parse.ParseObject;
+
 import android.app.Application;
 
 public class ParseApplication extends Application {
@@ -9,6 +11,9 @@ public class ParseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+        //Register Friend Parse Object
+        ParseObject.registerSubclass(Friend.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("xcF1xYEmcBGVuyfatUYLkqOgAOUFZr7QdOuq1gAd")

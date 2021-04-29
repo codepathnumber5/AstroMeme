@@ -1,12 +1,49 @@
 package com.example.astromeme;
 
-public class Friend {
+import android.util.Log;
 
-    public String name;
-    public int sign_image_id;
-    public String sign_desc;
+import com.parse.FindCallback;
+import com.parse.ParseClassName;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
-    public String getName() {
-        return this.name;
-    }
+import java.util.List;
+
+@ParseClassName("Friend")
+public class Friend extends ParseObject {
+
+public static final String KEY_NAME = "username";
+public static final String KEY_DATE = "birthday";
+public static final String KEY_ZODIAC = "zodiac";
+
+public Friend(){
+    super();
+}
+
+public String getKeyName(){
+    return getString(KEY_NAME);
+}
+
+public void setKeyName(String name){
+    put(KEY_NAME, name);
+}
+
+public String getKeyDate(){
+    return getString(KEY_DATE);
+}
+
+public void setKeyDate(String date){
+    put(KEY_DATE, date);
+}
+
+public String getKeyZodiac(){
+    return getString(KEY_ZODIAC);
+}
+
+public void setKeyZodiac(String zodiac){
+    put(KEY_ZODIAC, zodiac);
+}
+
 }

@@ -13,6 +13,10 @@
         android:theme="@style/Theme.AstroMeme">
         <activity android:name=".MainActivity">
         </activity>
+        <activity android:name=".NewFriendActivity">
+        </activity>
+        <activity android:name=".FriendSign">
+        </activity>
         <activity android:name=".SignUpActivity">
         </activity>
         <activity android:name=".ImageGrid">
