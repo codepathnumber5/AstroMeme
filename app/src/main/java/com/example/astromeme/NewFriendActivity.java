@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.parse.ParseException;
 import com.parse.SaveCallback;
 
+import java.util.Calendar;
+
 public class NewFriendActivity extends AppCompatActivity {
     public static final String TAG = "NEWFRIENDACTIVITY";
     private EditText newNameField;
@@ -37,6 +39,9 @@ public class NewFriendActivity extends AppCompatActivity {
         pickerMonth = findViewById(R.id.picker_month);
         pickerDay = findViewById(R.id.picker_day);
 
+        Calendar calendar = Calendar.getInstance();
+        final int month = calendar.get(Calendar.MONTH);
+        final int day = calendar.get(Calendar.DAY_OF_MONTH);
 
 
 
