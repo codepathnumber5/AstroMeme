@@ -25,7 +25,6 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
         this.context = context;
         this.friends = friends;
     }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -63,30 +62,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
         }
 
         public void bind(Friend friend) {
-            name.setText(friend.getName());
+            name.setText(friend.getKeyName());
 
-            /*
-             TODO find way to call drawable based on sign name
-             maybe store drawable resource id per image in DB?
-            sign.setImageResource();
-            */
-
-            removeFriend.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    //TODO delete user from database
-                }
-            });
-
-            container.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    // Navigate to "Get Meme" screen
-                    Intent i = new Intent(context, FriendMeme.class);
-                    // i.putExtra(); - something here
-                    context.startActivity(i);
-                }
-            });
         }
     }
 }
