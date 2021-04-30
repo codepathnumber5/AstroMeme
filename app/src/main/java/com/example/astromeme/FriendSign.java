@@ -1,4 +1,6 @@
 package com.example.astromeme;
 
-public class FriendSign {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class FriendSign extends AppCompatActivity {
 }
