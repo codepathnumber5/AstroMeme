@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.astromeme">
-    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:name=".ParseApplication"
@@ -33,15 +32,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="net.dean.jraw.android.REDDIT_USERNAME"
-            android:value="${USERNAME}" />
-        <meta-data
-            android:name="net.dean.jraw.android.CLIENT_ID"
-            android:value="${CONSUMER_KEY}" />
-        <meta-data
-            android:name="net.dean.jraw.android.REDIRECT_URL"
-            android:value="${REDIRECT}" />
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />

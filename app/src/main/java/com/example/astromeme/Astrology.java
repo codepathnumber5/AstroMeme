@@ -1,7 +1,15 @@
 package com.example.astromeme;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.time.Month;
 import java.time.MonthDay;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class Astrology {
     public Astrology() {
@@ -51,6 +59,31 @@ public class Astrology {
         return sign;
     }
 
-    
+    private JSONObject callAztroAPI(String sign) {
+        OkHttpClient client = new OkHttpClient();
+
+        try {
+            Request request = new Request.Builder()
+                    .url(String.format("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=%s&day=today", sign))
+                    .post(null)
+                    .addHeader("x-rapidapi-key", BuildConfig.AZTRO_API_KEY)
+                    .addHeader("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
+                    .build();
+
+            Response response = client.newCall(request).execute();
+            String JsonData = response.body().string();
+            JSONObject jsonObject = new JSONObject(JsonData);
+            return jsonObject;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
 
 }

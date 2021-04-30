@@ -19,9 +19,7 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        manifestPlaceholders = [CONSUMER_KEY: apikeyProperties['CONSUMER_KEY'], USERNAME: apikeyProperties['USERNAME'], REDIRECT: apikeyProperties['REDIRECT']]
-        //buildConfigField("String", "CONSUMER_KEY", apikeyProperties['CONSUMER_KEY'])
-        //buildConfigField("String", "CONSUMER_SECRET", apikeyProperties['CONSUMER_SECRET'])
+        buildConfigField("String", "AZTRO_API_KEY", apikeyProperties['AZTRO_API_KEY'])
     }
 
     buildTypes {

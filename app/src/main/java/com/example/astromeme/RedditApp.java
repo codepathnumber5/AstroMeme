@@ -15,6 +15,7 @@ import net.dean.jraw.oauth.AccountHelper;
 import java.util.UUID;
 
 public class RedditApp extends Application {
+    /*
     private static AccountHelper accountHelper;
     private static SharedPreferencesTokenStore tokenStore;
 
@@ -59,4 +60,6 @@ public class RedditApp extends Application {
 
     public static AccountHelper getAccountHelper() { return accountHelper; }
     public static SharedPreferencesTokenStore getTokenStore() { return tokenStore; }
+
+     */
 }
