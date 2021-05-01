@@ -1,11 +1,13 @@
 package com.example.astromeme;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -16,32 +18,30 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.parse.ParseException;
 import com.parse.SaveCallback;
 
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class NewFriendActivity extends AppCompatActivity {
     public static final String TAG = "NEWFRIENDACTIVITY";
     private EditText newNameField;
-    private EditText pickerMonth;
-    private EditText pickerDay;
     private Button cancelNewFriend;
     private Button getNewSign;
-
-    private DatePickerDialog.OnDateSetListener dateSetListener;
+    private DatePickerDialog datePickerDialog;
+    private Button dateButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_friend);
+        initDatePicker();
 
         newNameField = findViewById(R.id.new_name_field);
         cancelNewFriend = findViewById(R.id.cancel_new_friend);
         getNewSign = findViewById(R.id.get_new_sign);
-        pickerMonth = findViewById(R.id.picker_month);
-        pickerDay = findViewById(R.id.picker_day);
+        dateButton = findViewById(R.id.date_button);
 
-        Calendar calendar = Calendar.getInstance();
-        final int month = calendar.get(Calendar.MONTH);
-        final int day = calendar.get(Calendar.DAY_OF_MONTH);
+        dateButton.setText(getTodaysDate());
 
 
 
@@ -56,6 +56,9 @@ public class NewFriendActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String friendName = newNameField.getText().toString();
+                String friendDate = dateButton.getText().toString();
+                String friendZodiac = new Astrology().getSign(friendDate);
+                /*
                 String friendMonth = pickerMonth.getText().toString();
                 String friendDay = pickerDay.getText().toString();
 
@@ -66,9 +69,43 @@ public class NewFriendActivity extends AppCompatActivity {
                     Toast.makeText(NewFriendActivity.this, "Please enter a name", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                 */
                 saveFriend(friendName, friendDate, friendZodiac);
             }
         });
+    }
+
+    private void initDatePicker() {
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String monthString = new DateFormatSymbols().getShortMonths()[month];
+                String dateString = monthString + " " + dayOfMonth + " " + year;
+                dateButton.setText(dateString);
+            }
+        };
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+
+        int style = R.style.Theme_MaterialComponents_Light_Dialog_Alert;
+        datePickerDialog = new DatePickerDialog(this, style,dateSetListener,year,month,day);
+        datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+    }
+
+    public String getTodaysDate() {
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        String monthString = new DateFormatSymbols().getShortMonths()[month];
+        String dateString = monthString + " " + day + " " + year;
+        return dateString;
+    }
+    public void openDatePicker(View view) {
+        datePickerDialog.show();
     }
 
     private void saveFriend(String name, String date, String zodiac){
