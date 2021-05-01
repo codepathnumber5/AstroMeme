@@ -4,9 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -21,12 +24,14 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAG = "Main activity";
     List<Friend> allFriends;
     FriendAdapter friendAdapter;
+    Button addFriend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friend_list);
 
+        addFriend = findViewById(R.id.add_friend);
         RecyclerView rvFriends = findViewById(R.id.friends);
         allFriends = new ArrayList<>();
 
@@ -40,7 +45,12 @@ public class MainActivity extends AppCompatActivity {
         // Set layout manager on to recycler view
         rvFriends.setLayoutManager(new LinearLayoutManager(MainActivity.this));
 
-
+        addFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNewFriendActivity();
+            }
+        });
 
         //TODO something else here to get friends from database??
 
@@ -66,5 +76,10 @@ public class MainActivity extends AppCompatActivity {
                 friendAdapter.notifyDataSetChanged();
             }
         });
+    }
+
+    private void goToNewFriendActivity() {
+        Intent i = new Intent(this, NewFriendActivity.class);
+        startActivity(i);
     }
 }

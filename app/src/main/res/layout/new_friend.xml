@@ -71,14 +71,15 @@
 
         <Button
             android:id="@+id/date_button"
+            style="?android:spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="JAN 01 2021"
-            android:textSize="30sp"
-            android:textAlignment="center"
             android:layout_weight="0.5"
+            android:onClick="openDatePicker"
+            android:text="JAN 01 2021"
+            android:textAlignment="center"
             android:textColor="@color/black"
-            style="?android:spinnerStyle"/>
+            android:textSize="25dp" />
 
     </LinearLayout>
 
@@ -97,7 +98,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="0.5"
             android:text="Cancel"
-            tools:text="Cancel"/>
+            tools:text="Cancel" />
 
         <Button
             android:id="@+id/get_new_sign"
@@ -105,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Get Sign"
-            tools:text="Get Sign"/>
+            tools:text="Get Sign" />
 
     </LinearLayout>
 

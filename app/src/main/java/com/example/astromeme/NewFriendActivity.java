@@ -91,7 +91,7 @@ public class NewFriendActivity extends AppCompatActivity {
         int day = cal.get(Calendar.DAY_OF_MONTH);
 
         int style = R.style.Theme_MaterialComponents_Light_Dialog_Alert;
-        datePickerDialog = new DatePickerDialog(this, style,dateSetListener,year,month,day);
+        datePickerDialog = new DatePickerDialog(this,dateSetListener,year,month,day);
         datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
     }
 
@@ -134,7 +134,7 @@ public class NewFriendActivity extends AppCompatActivity {
     }
 
     private void goFriendSign(){
-        Intent i = new Intent(NewFriendActivity.this, FriendSign.class);
+        Intent i = new Intent(this, FriendSign.class);
         startActivity(i);
     }
 
