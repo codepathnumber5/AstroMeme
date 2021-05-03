@@ -19,7 +19,7 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class FriendList extends AppCompatActivity {
 
     public static final String TAG = "Main activity";
     List<Friend> allFriends;
@@ -37,13 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
         queryFriends();
         // Create an adapter
-        friendAdapter = new FriendAdapter(MainActivity.this, allFriends);
+        friendAdapter = new FriendAdapter(FriendList.this, allFriends);
 
         // Set the adapter on to recycler view
         rvFriends.setAdapter(friendAdapter);
 
         // Set layout manager on to recycler view
-        rvFriends.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        rvFriends.setLayoutManager(new LinearLayoutManager(FriendList.this));
 
         addFriend.setOnClickListener(new View.OnClickListener() {
             @Override
