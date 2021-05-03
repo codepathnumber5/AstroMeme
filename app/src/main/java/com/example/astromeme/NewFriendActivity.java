@@ -58,6 +58,8 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendName = newNameField.getText().toString();
                 String friendDate = dateButton.getText().toString();
                 String friendZodiac = new Astrology().getSign(friendDate);
+                Log.i(TAG, friendDate);
+                Log.i(TAG,friendZodiac);
                 /*
                 String friendMonth = pickerMonth.getText().toString();
                 String friendDay = pickerDay.getText().toString();
@@ -71,6 +73,7 @@ public class NewFriendActivity extends AppCompatActivity {
                 }
                  */
                 saveFriend(friendName, friendDate, friendZodiac);
+                goFriendSign();
             }
         });
     }
@@ -122,7 +125,6 @@ public class NewFriendActivity extends AppCompatActivity {
                 }
                 Log.i(TAG, "Friend was saved! ");
                 // TODO move to the friend_sign activity with the name and the sign for this friend
-                goFriendSign();
             }
         });
     }
