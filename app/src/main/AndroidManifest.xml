@@ -22,6 +22,8 @@
         </activity>
         <activity android:name="FullScreenActivity">
         </activity>
+        <activity android:name=".FriendList">
+        </activity>
         <activity
             android:name=".FriendMeme"
             android:windowSoftInputMode="adjustNothing|stateHidden">
