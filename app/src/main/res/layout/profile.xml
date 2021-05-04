@@ -4,6 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/signText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:text="Error Loading Sign" />
+
     <ImageView
         android:id="@+id/zodiacImage"
         android:layout_width="wrap_content"
@@ -15,14 +26,26 @@
         android:src="@drawable/gemini" />
 
     <TextView
+        android:id="@+id/someText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:layout_below="@id/zodiacImage"
+        android:textStyle="bold"
+        android:layout_alignParentEnd="true"
+        android:text="Your Horoscope for Today!" />
+
+    <TextView
         android:id="@+id/zodiacText"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="15dp"
         android:layout_margin="10dp"
-        android:layout_below="@+id/zodiacImage"
-        android:text="some text about how your day will gonna go if you are this sign" />
+        android:layout_below="@+id/someText"
+        android:text="Your Horoscope!" />
 
     <LinearLayout
         android:id="@+id/bottomButtons"
@@ -57,5 +80,6 @@
         android:layout_marginLeft="10dp"/>
 
     </LinearLayout>
+
 
 </RelativeLayout>

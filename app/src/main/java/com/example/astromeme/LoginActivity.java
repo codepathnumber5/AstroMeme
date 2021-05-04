@@ -40,6 +40,18 @@ public class LoginActivity extends AppCompatActivity {
                 Log.i(TAG, "login button pressed");
                 String username = userId.getText().toString();
                 String password = pswd.getText().toString();
+
+                if (username.isEmpty()){
+                    showToast("Fill in username field!");
+                    emptyPassword();
+                    return;
+                }
+                if(password.isEmpty()){
+                    showToast("Fill in password field!");
+                    emptyPassword();
+                    return;
+                }
+
                 loginUser(username, password);
             }
         });
@@ -66,8 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
 
                 //go to main activity is login is successful
+                showToast("Successful Login!");
                 goMainActivity();
-                Toast.makeText(LoginActivity.this, "Successful Login!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -80,5 +92,13 @@ public class LoginActivity extends AppCompatActivity {
     private void goSignUpActivity() {
         Intent i = new Intent(this, SignUpActivity.class);
         startActivity(i);
+    }
+
+    private void emptyPassword(){
+        pswd.setText("");
+    }
+
+    private void showToast(String toast){
+        Toast.makeText(this, toast, Toast.LENGTH_SHORT).show();
     }
 }

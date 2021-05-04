@@ -1,6 +1,10 @@
 package com.example.astromeme;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
+
+import com.loopj.android.http.AsyncHttpClient;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,14 +17,22 @@ import java.time.MonthDay;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class Astrology {
 
     public static final String TAG = "ASTROLOGY";
+    private JSONObject returnJson;
     public Astrology() {
 
     }
@@ -83,29 +95,53 @@ public class Astrology {
 
     }
 
-    public JSONObject callAztroAPI(String sign) {
+    public JSONObject callAztroAPI(String sign){
         OkHttpClient client = new OkHttpClient();
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+
+        Callable<JSONObject> callable = new Callable<JSONObject>() {
+            @Override
+            public JSONObject call() throws Exception {
+                try{
+                    RequestBody emptyBody = RequestBody.create(null, new byte[0]);
+                    Request request = new Request.Builder()
+                            .url(String.format("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=%s&day=today", sign))
+                            .post(emptyBody)
+                            .addHeader("x-rapidapi-key", BuildConfig.AZTRO_API_KEY)
+                            .addHeader("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    String JsonData = response.body().string();
+                    JSONObject jsonObject = new JSONObject(JsonData);
+                    Log.v(TAG, "JSON IS : " + jsonObject.toString());
+                    return jsonObject;
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        };
+        Future<JSONObject> future = executor.submit(callable);
 
         try {
-            Request request = new Request.Builder()
-                    .url(String.format("https://sameer-kumar-aztro-v1.p.rapidapi.com/?sign=%s&day=today", sign))
-                    .post(null)
-                    .addHeader("x-rapidapi-key", BuildConfig.AZTRO_API_KEY)
-                    .addHeader("x-rapidapi-host", "sameer-kumar-aztro-v1.p.rapidapi.com")
-                    .build();
-
-            Response response = client.newCall(request).execute();
-            String JsonData = response.body().string();
-            JSONObject jsonObject = new JSONObject(JsonData);
-            return jsonObject;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
+            return future.get();
+        }
+        catch (ExecutionException e){
             e.printStackTrace();
         }
+        catch (InterruptedException e){
+            e.printStackTrace();
+        }
+
         return null;
     }
+
+
+
 
 
 
