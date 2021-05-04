@@ -10,6 +10,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Month;
 import java.time.MonthDay;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -27,61 +28,62 @@ public class Astrology {
     public String getSign(String dateString) {
 
         //String[] values = date.split("");
-        try {
+        DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MMM dd yyyy");
+            /*
             Date date = new SimpleDateFormat("MMM dd yyyy").parse(dateString);
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
             int month = cal.get(Calendar.MONTH);
             Log.i(TAG,String.valueOf(month));
             int day = cal.get(Calendar.DAY_OF_MONTH);
-            MonthDay md = MonthDay.of(month,day);
 
-            String sign = "";
-            if (MonthDay.of(Month.MARCH,21).compareTo(md) * md.compareTo(MonthDay.of(Month.APRIL,19)) >= 0) {
-                sign = "Aries";
-            }
-            else if (MonthDay.of(Month.APRIL,20).compareTo(md) * md.compareTo(MonthDay.of(Month.MAY,20)) >= 0) {
-                sign = "Taurus";
-            }
-            else if (MonthDay.of(Month.MAY,21).compareTo(md) * md.compareTo(MonthDay.of(Month.JUNE,20)) >= 0) {
-                sign = "Gemini";
-            }
-            else if (MonthDay.of(Month.JUNE,21).compareTo(md) * md.compareTo(MonthDay.of(Month.JULY,22)) >= 0) {
-                sign = "Cancer";
-            }
-            else if (MonthDay.of(Month.JULY,23).compareTo(md) * md.compareTo(MonthDay.of(Month.AUGUST,22)) >= 0) {
-                sign = "Leo";
-            }
-            else if (MonthDay.of(Month.AUGUST,23).compareTo(md) * md.compareTo(MonthDay.of(Month.SEPTEMBER,22)) >= 0) {
-                sign = "Virgo";
-            }
-            else if (MonthDay.of(Month.SEPTEMBER,23).compareTo(md) * md.compareTo(MonthDay.of(Month.OCTOBER,22)) >= 0) {
-                sign = "Libra";
-            }
-            else if (MonthDay.of(Month.OCTOBER,23).compareTo(md) * md.compareTo(MonthDay.of(Month.NOVEMBER,21)) >= 0) {
-                sign = "Scorpio";
-            }
-            else if (MonthDay.of(Month.NOVEMBER,22).compareTo(md) * md.compareTo(MonthDay.of(Month.DECEMBER,21)) >= 0) {
-                sign = "Sagittarius";
-            }
-            else if (MonthDay.of(Month.DECEMBER,22).compareTo(md) * md.compareTo(MonthDay.of(Month.JANUARY,19)) >= 0) {
-                sign = "Capricorn";
-            }
-            else if (MonthDay.of(Month.JANUARY,20).compareTo(md) * md.compareTo(MonthDay.of(Month.FEBRUARY,18)) >= 0) {
-                sign = "Aquarius";
-            }
-            else if (MonthDay.of(Month.FEBRUARY,19).compareTo(md) * md.compareTo(MonthDay.of(Month.MARCH,20)) >= 0) {
-                sign = "Pisces";
-            }
+             */
 
-            return sign;
-        } catch (ParseException e) {
-            e.printStackTrace();
+        MonthDay md = MonthDay.parse(dateString, dateTimeFormatter);//MonthDay.of(month,day);
+
+        String sign = "";
+        if (MonthDay.of(Month.MARCH,21).compareTo(md) * md.compareTo(MonthDay.of(Month.APRIL,19)) >= 0) {
+            sign = "Aries";
         }
-        return "";
+        else if (MonthDay.of(Month.APRIL,20).compareTo(md) * md.compareTo(MonthDay.of(Month.MAY,20)) >= 0) {
+            sign = "Taurus";
+        }
+        else if (MonthDay.of(Month.MAY,21).compareTo(md) * md.compareTo(MonthDay.of(Month.JUNE,20)) >= 0) {
+            sign = "Gemini";
+        }
+        else if (MonthDay.of(Month.JUNE,21).compareTo(md) * md.compareTo(MonthDay.of(Month.JULY,22)) >= 0) {
+            sign = "Cancer";
+        }
+        else if (MonthDay.of(Month.JULY,23).compareTo(md) * md.compareTo(MonthDay.of(Month.AUGUST,22)) >= 0) {
+            sign = "Leo";
+        }
+        else if (MonthDay.of(Month.AUGUST,23).compareTo(md) * md.compareTo(MonthDay.of(Month.SEPTEMBER,22)) >= 0) {
+            sign = "Virgo";
+        }
+        else if (MonthDay.of(Month.SEPTEMBER,23).compareTo(md) * md.compareTo(MonthDay.of(Month.OCTOBER,22)) >= 0) {
+            sign = "Libra";
+        }
+        else if (MonthDay.of(Month.OCTOBER,23).compareTo(md) * md.compareTo(MonthDay.of(Month.NOVEMBER,21)) >= 0) {
+            sign = "Scorpio";
+        }
+        else if (MonthDay.of(Month.NOVEMBER,22).compareTo(md) * md.compareTo(MonthDay.of(Month.DECEMBER,21)) >= 0) {
+            sign = "Sagittarius";
+        }
+        else if (MonthDay.of(Month.DECEMBER,22).compareTo(md) * md.compareTo(MonthDay.of(Month.JANUARY,19)) >= 0) {
+            sign = "Capricorn";
+        }
+        else if (MonthDay.of(Month.JANUARY,20).compareTo(md) * md.compareTo(MonthDay.of(Month.FEBRUARY,18)) >= 0) {
+            sign = "Aquarius";
+        }
+        else if (MonthDay.of(Month.FEBRUARY,19).compareTo(md) * md.compareTo(MonthDay.of(Month.MARCH,20)) >= 0) {
+            sign = "Pisces";
+        }
+
+        return sign;
+
     }
 
-    private JSONObject callAztroAPI(String sign) {
+    public JSONObject callAztroAPI(String sign) {
         OkHttpClient client = new OkHttpClient();
 
         try {
