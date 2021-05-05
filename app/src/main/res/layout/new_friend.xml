@@ -43,7 +43,7 @@
         android:id="@+id/date_pick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="20dp"
         android:orientation="horizontal"
         android:layout_gravity="center"
