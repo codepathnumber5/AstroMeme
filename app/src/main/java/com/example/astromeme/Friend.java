@@ -17,9 +17,14 @@ public class Friend extends ParseObject {
 public static final String KEY_NAME = "username";
 public static final String KEY_DATE = "birthday";
 public static final String KEY_ZODIAC = "zodiac";
+public static final String ID = "User";
 
 public Friend(){
     super();
+}
+
+public void setUser(ParseUser user){
+    put("User",user);
 }
 
 public String getKeyName(){
