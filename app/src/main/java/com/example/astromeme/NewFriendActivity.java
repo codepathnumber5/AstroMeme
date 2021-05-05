@@ -58,9 +58,22 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendName = newNameField.getText().toString();
                 String friendDate = dateButton.getText().toString();
                 String friendZodiac = new Astrology().getSign(friendDate);
+
                 Log.i(TAG, friendDate);
                 Log.i(TAG,friendZodiac);
 
+                /*
+                String friendMonth = pickerMonth.getText().toString();
+                String friendDay = pickerDay.getText().toString();
+
+                // Can be adjusted later, when decided on date format we will use
+                String friendDate = friendDay+"/"+friendMonth;
+                String friendZodiac = "generic";
+                if (friendName.isEmpty()) {
+                    Toast.makeText(NewFriendActivity.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                 */
                 saveFriend(friendName, friendDate, friendZodiac);
             }
         });
@@ -126,7 +139,7 @@ public class NewFriendActivity extends AppCompatActivity {
     }
 
     private void goFriendSign(Friend friend){
-        Intent i = new Intent(this, FriendSign.class);
+        Intent i = new Intent(NewFriendActivity.this, FriendSign.class);
         i.putExtra("friend_object", friend);
         startActivity(i);
     }
