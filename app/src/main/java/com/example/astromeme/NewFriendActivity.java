@@ -60,18 +60,7 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendZodiac = new Astrology().getSign(friendDate);
                 Log.i(TAG, friendDate);
                 Log.i(TAG,friendZodiac);
-                /*
-                String friendMonth = pickerMonth.getText().toString();
-                String friendDay = pickerDay.getText().toString();
 
-                // Can be adjusted later, when decided on date format we will use
-                String friendDate = friendDay+"/"+friendMonth;
-                String friendZodiac = "generic";
-                if (friendName.isEmpty()) {
-                    Toast.makeText(NewFriendActivity.this, "Please enter a name", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                 */
                 saveFriend(friendName, friendDate, friendZodiac);
             }
         });
