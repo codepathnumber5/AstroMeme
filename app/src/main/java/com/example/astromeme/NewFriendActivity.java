@@ -57,6 +57,7 @@ public class NewFriendActivity extends AppCompatActivity {
 
                 String friendName = newNameField.getText().toString();
                 String friendDate = dateButton.getText().toString();
+
                 String friendZodiac = new Astrology().getSign(friendDate);
                 /*
                 String friendMonth = pickerMonth.getText().toString();
@@ -79,8 +80,15 @@ public class NewFriendActivity extends AppCompatActivity {
         DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String monthString = new DateFormatSymbols().getShortMonths()[month];
-                String dateString = monthString + " " + dayOfMonth + " " + year;
+                Calendar cal = Calendar.getInstance();
+                cal.set(Calendar.YEAR, year);
+                cal.set(Calendar.MONTH, month);
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                SimpleDateFormat format = new SimpleDateFormat("MMM dd yyyy");
+                String dateString = format.format(cal.getTime());
+                //String monthString = new DateFormatSymbols().getShortMonths()[month];
+
+                //String dateString = monthString + " " + dayOfMonth + " " + year;
                 dateButton.setText(dateString);
             }
         };
@@ -97,11 +105,13 @@ public class NewFriendActivity extends AppCompatActivity {
 
     public String getTodaysDate() {
         Calendar cal = Calendar.getInstance();
-        int year = cal.get(Calendar.YEAR);
-        int month = cal.get(Calendar.MONTH);
-        int day = cal.get(Calendar.DAY_OF_MONTH);
-        String monthString = new DateFormatSymbols().getShortMonths()[month];
-        String dateString = monthString + " " + day + " " + year;
+        SimpleDateFormat format = new SimpleDateFormat("MMM dd yyyy");
+        String dateString = format.format(cal.getTime());
+        //int year = cal.get(Calendar.YEAR);
+        //int month = cal.get(Calendar.MONTH);
+        //int day = cal.get(Calendar.DAY_OF_MONTH);
+        //String monthString = new DateFormatSymbols().getShortMonths()[month];
+        //String dateString = monthString + " " + day + " " + year;
         return dateString;
     }
     public void openDatePicker(View view) {

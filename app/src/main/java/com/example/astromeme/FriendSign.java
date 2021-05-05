@@ -92,6 +92,9 @@ public class FriendSign extends AppCompatActivity {
     }
 
     private void goToEditFriend() {
+        Intent i = new Intent(this, EditFriendActivity.class);
+        i.putExtra("friend_object", friend);
+        startActivity(i);
 
     }
 }
