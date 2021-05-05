@@ -10,6 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AstroMeme">
+        <activity android:name=".EditFriendActivity">
+        </activity>
         <activity android:name=".MainActivity">
         </activity>
         <activity android:name=".NewFriendActivity">
