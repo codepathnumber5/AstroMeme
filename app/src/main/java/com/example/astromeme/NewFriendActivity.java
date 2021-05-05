@@ -59,6 +59,10 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendDate = dateButton.getText().toString();
 
                 String friendZodiac = new Astrology().getSign(friendDate);
+
+                Log.i(TAG, friendDate);
+                Log.i(TAG,friendZodiac);
+
                 /*
                 String friendMonth = pickerMonth.getText().toString();
                 String friendDay = pickerDay.getText().toString();
