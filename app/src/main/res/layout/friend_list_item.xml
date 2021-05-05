@@ -16,7 +16,9 @@
         android:id="@+id/f_list_name"
         android:layout_width="280dp"
         android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
         android:layout_toEndOf="@id/f_list_sign"
+        android:textSize="20dp"
         tools:text="Anastasia Kali" />
 
     <Button

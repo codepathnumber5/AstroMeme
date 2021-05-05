@@ -87,13 +87,30 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         RelativeLayout container;
-        ImageView sign;
+        ImageView signImg;
+        String sign;
         TextView name;
         Button removeFriend;
 
+        private int getSignImage(String sign){
+            if (sign.equals("Aquarius")) return R.drawable.aquarius;
+            else if (sign.equals("Aries")) return R.drawable.aries;
+            else if (sign.equals("Cancer")) return R.drawable.cancer;
+            else if (sign.equals("Capricorn")) return R.drawable.capricorn;
+            else if (sign.equals("Gemini")) return R.drawable.gemini;
+            else if (sign.equals("Leo")) return R.drawable.leo;
+            else if (sign.equals("Libra")) return R.drawable.libra;
+            else if (sign.equals("Pisces")) return R.drawable.pices;
+            else if (sign.equals("Sagittarius")) return R.drawable.sagitarius;
+            else if (sign.equals("Scorpio")) return R.drawable.scorpio;
+            else if (sign.equals("Taurus")) return R.drawable.taurus;
+            else if (sign.equals("Virgo")) return R.drawable.virgo;
+            return 0;
+        }
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            sign = itemView.findViewById(R.id.f_list_sign);
+            signImg = itemView.findViewById(R.id.f_list_sign);
             name = itemView.findViewById(R.id.f_list_name);
             removeFriend = itemView.findViewById(R.id.f_remove);
             container = itemView.findViewById(R.id.friend_container);
@@ -104,7 +121,8 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
 
         public void bind(Friend friend) {
             name.setText(friend.getKeyName());
-
+            sign = friend.getKeyZodiac();
+            signImg.setImageResource(getSignImage(sign));
         }
     }
 }
