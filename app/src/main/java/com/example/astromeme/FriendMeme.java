@@ -32,6 +32,9 @@ public class FriendMeme extends AppCompatActivity {
     private EditText topText, bottomText;
     private ImageView memeImage;
     private TextView topTextView, bottomTextView;
+    private TextView gotNameMeme;
+
+    private Friend friend;
     ImageAdapter imageAdapter;
     RelativeLayout relativeLayout;
 
@@ -39,6 +42,8 @@ public class FriendMeme extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.friend_meme);
+
+        friend = getIntent().getParcelableExtra("friend_object");
 
         imageAdapter = new ImageAdapter(this);
 
@@ -50,6 +55,9 @@ public class FriendMeme extends AppCompatActivity {
         topTextView = findViewById(R.id.topTextView);
         bottomTextView = findViewById(R.id.bottomTextView);
         relativeLayout = findViewById(R.id.relativeLayout);
+        gotNameMeme = findViewById(R.id.got_name_meme);
+
+        gotNameMeme.setText(friend.getKeyName());
 
         //allows the editTexts to edit the textViews in real time
         topText.addTextChangedListener(new TextWatcher() {
