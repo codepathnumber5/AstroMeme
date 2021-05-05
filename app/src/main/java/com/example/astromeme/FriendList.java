@@ -13,6 +13,7 @@ import android.widget.Button;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -21,7 +22,7 @@ import java.util.List;
 
 public class FriendList extends AppCompatActivity {
 
-    public static final String TAG = "Main activity";
+    public static final String TAG = "FriendList";
     List<Friend> allFriends;
     FriendAdapter friendAdapter;
     Button addFriend;
@@ -59,17 +60,15 @@ public class FriendList extends AppCompatActivity {
 
     private void queryFriends(){
         ParseQuery<Friend> query = ParseQuery.getQuery(Friend.class);
-        query.include(Friend.KEY_ZODIAC);
+        ParseObject user = ParseUser.getCurrentUser();
+        query.whereEqualTo("User", user);
+        query.include(Friend.KEY_NAME);
         query.findInBackground(new FindCallback<Friend>() {
             @Override
             public void done(List<Friend> friends, ParseException e) {
                 if(e!=null){
                     Log.e(TAG, "Issue with getting friends", e);
                     return;
-                }
-                for(Friend friend: friends){
-                    Log.i(TAG, "Friend: "+ friend.getKeyName()+ friend.getKeyDate());
-                    allFriends.add(friend);
                 }
                 Log.i(TAG, "All: "+friends);
                 allFriends.addAll(friends);
