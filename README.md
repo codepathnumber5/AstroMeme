@@ -188,7 +188,8 @@ Completed user stories:
 Complete user stories:
 - [x] User can log in and see the user page display the user's zodiac sign
 - [x] User is able to see the Friend list displayed
+- [x] User can delete any existing friend from the list
 - [x] User is able to add new friend 
-- [x] User can see the page display for new friend added with the zodiac sign of a friend
+- [ ] User can see the page display for new friend added with the zodiac sign of a friend
 
-<img src="friend-list.gif" width="200" title='add friend walkthrough'/> <img src="" width="200" title='finald build walkthrough'/>
+<img src="friend-list.gif" width="200" title='add friend walkthrough'/> <img src="delete.gif" width="200" title='finald build walkthrough'/>
