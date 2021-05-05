@@ -191,4 +191,4 @@ Complete user stories:
 - [x] User is able to add new friend 
 - [x] User can see the page display for new friend added with the zodiac sign of a friend
 
-<img src="friend-list.gif" width="200" title='add friend walkthrough'/> <img src="" width="200" title='finald build walkthrough'/> <img src="" width="200" title='final build walkthrough'/>
+<img src="friend-list.gif" width="200" title='add friend walkthrough'/> <img src="" width="200" title='finald build walkthrough'/>
