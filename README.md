@@ -178,3 +178,17 @@ Completed user stories:
 
 <img src="astromeme-pickImage.gif" width="200" title='meme walkthrough'/> <img src="astromeme-putText.gif" width="200" title='meme walkthrough'/> <img src="astromeme-sendMeme.gif" width="200" title='meme walkthrough'/>
 
+### Final Build Sprint
+- [x] Created User Profile class and XML
+- [x] Set up the saving of a new friend to the Parse database based on the user id
+- [x] The friend list page is recycler view is able to displya all of the friends 
+- [x] Created the edit friend XML 
+- [x] Added resources to the meme display folder
+ 
+Complete user stories:
+- [x] User can log in and see the user page display the user's zodiac sign
+- [x] User is able to see the Friend list displayed
+- [x] User is able to add new friend 
+- [x] User can see the page display for new friend added with the zodiac sign of a friend
+
+<img src="" width="200" title='add friend walkthrough'/> <img src="" width="200" title='finald build walkthrough'/> <img src="" width="200" title='final build walkthrough'/>
