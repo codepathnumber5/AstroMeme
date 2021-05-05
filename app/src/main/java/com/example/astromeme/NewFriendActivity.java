@@ -73,7 +73,6 @@ public class NewFriendActivity extends AppCompatActivity {
                 }
                  */
                 saveFriend(friendName, friendDate, friendZodiac);
-                goFriendSign();
             }
         });
     }
@@ -126,6 +125,7 @@ public class NewFriendActivity extends AppCompatActivity {
                 }
                 Log.i(TAG, "Friend was saved! ");
                 // TODO move to the friend_sign activity with the name and the sign for this friend
+                goFriendSign(friend);
             }
         });
     }
@@ -136,8 +136,9 @@ public class NewFriendActivity extends AppCompatActivity {
 
     }
 
-    private void goFriendSign(){
+    private void goFriendSign(Friend friend){
         Intent i = new Intent(this, FriendSign.class);
+        i.putExtra("friend_object", friend);
         startActivity(i);
     }
 
