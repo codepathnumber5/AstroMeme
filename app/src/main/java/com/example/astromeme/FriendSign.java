@@ -33,6 +33,9 @@ public class FriendSign extends AppCompatActivity {
         gotSign = findViewById(R.id.got_sign);
         gotName = findViewById(R.id.got_name);
         gotSignPic = findViewById(R.id.got_sign_pic);
+        homeSign = findViewById(R.id.home_sign);
+        getMemeButton = findViewById(R.id.get_meme_btn);
+        hamburger = findViewById(R.id.hamburger);
 
         gotSign.setText(friend.getKeyZodiac());
         gotName.setText(friend.getKeyName());

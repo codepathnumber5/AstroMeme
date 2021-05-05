@@ -58,8 +58,6 @@ public class NewFriendActivity extends AppCompatActivity {
                 String friendName = newNameField.getText().toString();
                 String friendDate = dateButton.getText().toString();
                 String friendZodiac = new Astrology().getSign(friendDate);
-                Log.i(TAG, friendDate);
-                Log.i(TAG,friendZodiac);
                 /*
                 String friendMonth = pickerMonth.getText().toString();
                 String friendDay = pickerDay.getText().toString();
@@ -137,7 +135,7 @@ public class NewFriendActivity extends AppCompatActivity {
     }
 
     private void goFriendSign(Friend friend){
-        Intent i = new Intent(this, FriendSign.class);
+        Intent i = new Intent(NewFriendActivity.this, FriendSign.class);
         i.putExtra("friend_object", friend);
         startActivity(i);
     }
