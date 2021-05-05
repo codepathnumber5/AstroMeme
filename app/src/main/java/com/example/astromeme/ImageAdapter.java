@@ -14,8 +14,22 @@ public class ImageAdapter extends BaseAdapter {
 
     //TODO: get new images
     public int[] imageArray = {
-            R.drawable.aquarius //used as example only
-            , R.drawable.gemini
+            R.drawable.cat //used as example only
+            , R.drawable.evil_girl
+            , R.drawable.fish
+            , R.drawable.general
+            , R.drawable.girl_turns
+            , R.drawable.jackie
+            , R.drawable.lisa
+            , R.drawable.lisa_sad
+            , R.drawable.man
+            , R.drawable.many_harold
+            , R.drawable.nose_dude
+            , R.drawable.sad_dog
+            , R.drawable.screaming
+            , R.drawable.spiderman
+            , R.drawable.windowlife
+
     };
 
     public ImageAdapter(Context mContext){
