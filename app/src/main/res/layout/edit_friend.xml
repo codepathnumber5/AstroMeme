@@ -34,8 +34,8 @@
         android:id="@+id/edit_name_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter frined's name"
-        android:layout_below="@+id/new_friend_name"
+        android:hint="Enter friend's name"
+        android:layout_below="@+id/edit_friend_name"
         android:layout_margin="10dp" />
 
 
@@ -43,30 +43,23 @@
         android:id="@+id/edit_date_pick"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="20dp"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
+        android:layout_below="@id/edit_name_field"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/edit_name_field">
+        android:layout_gravity="center"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
 
         <TextView
             android:id="@+id/edit_month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:layout_weight="0.5"
             android:layout_marginLeft="10dp"
-            android:text="Month" />
-
-        <TextView
-            android:id="@+id/edit_day"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
+            android:fontFamily="@font/andika"
             android:layout_weight="0.5"
-            android:layout_marginRight="10dp"
-            android:text="Day" />
+            android:text="Birth Date"
+            android:textSize="25dp" />
 
     </LinearLayout>
 
@@ -76,28 +69,45 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/edit_date_pick"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="10dp"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/edit_picker_month"
+        <Button
+            android:id="@+id/edit_friend_date_button"
+            style="?android:spinnerStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5" />
-
-        <EditText
-            android:id="@+id/edit_picker_day"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5" />
+            android:layout_weight="0.5"
+            android:onClick="openEditDatePicker"
+            android:text="JAN 01 2021"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <!-- Side be side buttons will go here -->
 
     <LinearLayout
+        android:id="@+id/edit_save_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/edit_number_picker"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/edit_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save" />
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/edit_friend_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp">
 
         <Button
             android:id="@+id/cancel_edit_friend"
@@ -106,7 +116,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="0.5"
             android:text="Cancel"
-            tools:text="Cancel"/>
+            tools:text="Cancel" />
 
         <Button
             android:id="@+id/get_edit_sign"
@@ -114,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:text="Get Sign"
-            tools:text="Get Sign"/>
+            tools:text="Get Sign" />
 
     </LinearLayout>
 
