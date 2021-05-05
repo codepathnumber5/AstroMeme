@@ -4,8 +4,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
 
-import com.loopj.android.http.AsyncHttpClient;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
