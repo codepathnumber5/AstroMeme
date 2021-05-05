@@ -87,7 +87,8 @@ public class FriendSign extends AppCompatActivity {
     }
 
     private void goToFriendMemeActivity() {
-        Intent i = new Intent(this, FriendMeme.class);
+        Intent i = new Intent(FriendSign.this, FriendMeme.class);
+        i.putExtra("friend_object", getFriend());
         startActivity(i);
     }
 
