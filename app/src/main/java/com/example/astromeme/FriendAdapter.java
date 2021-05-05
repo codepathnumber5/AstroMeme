@@ -10,9 +10,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.List;
 
@@ -38,6 +42,40 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
         Log.d("FriendAdapter", "onBindViewHolder "+ position);
         Friend friend = friends.get(position);
         holder.bind(friend);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.v("FriendAdapter", "clicked friend at pos + " + position);
+                //Intent i = new Intent(context, FriendSign.class);
+                //i.putExtra("friend_object", friend);
+                //context.startActivity(i);
+            }
+        });
+        holder.removeFriend.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Friend removedFriend = friends.get(position);
+
+                //removes friend from database
+                deleteFriend(removedFriend);
+
+                //remove from list
+                friends.remove(position);
+                notifyItemRemoved(position);
+
+            }
+        });
+    }
+
+    private void deleteFriend(Friend friend){
+        friend.deleteInBackground(e -> {
+           if (e == null){
+               Toast.makeText(context, "Delete Successful!", Toast.LENGTH_SHORT).show();
+           }
+           else{
+               Toast.makeText(context, "Delete Unsuccessful: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+           }
+        });
     }
 
     // Return total count
@@ -59,6 +97,9 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
             name = itemView.findViewById(R.id.f_list_name);
             removeFriend = itemView.findViewById(R.id.f_remove);
             container = itemView.findViewById(R.id.friend_container);
+
+            removeFriend.setText("X");
+
         }
 
         public void bind(Friend friend) {

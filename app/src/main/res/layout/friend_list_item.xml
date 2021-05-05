@@ -14,7 +14,7 @@
 
     <TextView
         android:id="@+id/f_list_name"
-        android:layout_width="295dp"
+        android:layout_width="280dp"
         android:layout_height="60dp"
         android:layout_toEndOf="@id/f_list_sign"
         tools:text="Anastasia Kali" />
@@ -24,6 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/f_list_name"
+        android:layout_alignParentEnd="true"
         tools:text="X" />
 
 </RelativeLayout>
