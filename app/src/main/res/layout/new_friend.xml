@@ -83,7 +83,7 @@
 
     </LinearLayout>
 
-<!-- Side be side buttons will go here -->
+<!-- Side by side buttons will go here -->
 
     <LinearLayout
         android:id="@+id/new_friend_buttons"
