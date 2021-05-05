@@ -26,11 +26,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/f_list_name"
-<<<<<<< HEAD
+
         android:layout_alignParentEnd="true"
         tools:text="X" />
-=======
-        android:text="X"/>
->>>>>>> fbb9197e7da863dfa9fb86e14c8759574ea9cb15
 
 </RelativeLayout>
