@@ -54,6 +54,7 @@
             android:id="@+id/month"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/andika"
             android:textSize="25dp"
             android:layout_weight="0.5"
             android:layout_marginLeft="10dp"
