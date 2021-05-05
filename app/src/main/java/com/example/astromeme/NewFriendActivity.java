@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.ParseException;
+import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.text.DateFormatSymbols;
@@ -43,8 +44,6 @@ public class NewFriendActivity extends AppCompatActivity {
 
         dateButton.setText(getTodaysDate());
 
-
-
         cancelNewFriend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,6 +54,7 @@ public class NewFriendActivity extends AppCompatActivity {
         getNewSign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String friendName = newNameField.getText().toString();
                 String friendDate = dateButton.getText().toString();
                 String friendZodiac = new Astrology().getSign(friendDate);
@@ -113,6 +113,7 @@ public class NewFriendActivity extends AppCompatActivity {
 
     private void saveFriend(String name, String date, String zodiac){
         Friend friend = new Friend();
+        friend.setUser(ParseUser.getCurrentUser());
         friend.setKeyName(name);
         friend.setKeyDate(date);
         friend.setKeyZodiac(zodiac);
