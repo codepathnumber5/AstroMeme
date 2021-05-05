@@ -46,9 +46,9 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.ViewHolder
             @Override
             public void onClick(View v) {
                 Log.v("FriendAdapter", "clicked friend at pos + " + position);
-                //Intent i = new Intent(context, FriendSign.class);
-                //i.putExtra("friend_object", friend);
-                //context.startActivity(i);
+                Intent i = new Intent(context, FriendSign.class);
+                i.putExtra("friend_object", friend);
+                context.startActivity(i);
             }
         });
         holder.removeFriend.setOnClickListener(new View.OnClickListener() {
