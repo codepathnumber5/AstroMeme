@@ -1,5 +1,6 @@
 # AstroMeme
 An application focused on astrology and memes based off of them!
+<img src="dev_part2.gif" width="200" title='login walkthrough'/><img src="friend-list.gif" width="200" title='add friend walkthrough'/> <img src="delete.gif" width="200" title='finald build walkthrough'/>
 ## Table of Contents
 1. [Overview](#Overview)
 1. [Product Spec](#Product-Spec)
